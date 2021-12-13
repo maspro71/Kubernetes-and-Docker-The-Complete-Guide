@@ -13,6 +13,7 @@ kubeadmConfigPatches:
   networking:
     serviceSubnet: "10.96.0.1/12"
     podSubnet: "10.240.0.0/16"
+  apiVersion: v1
 nodes:
 - role: control-plane
 - role: worker
@@ -24,5 +25,8 @@ nodes:
   - containerPort: 2222
     hostPort: 2222
   extraMounts:
-  - hostPath: /dev
-    containerPath: /dev
+  - hostPath: /usr/src
+    containerPath: /usr/src
+
+
+
